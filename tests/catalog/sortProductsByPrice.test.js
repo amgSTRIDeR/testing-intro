@@ -19,7 +19,11 @@ describe('sortProductsByPrice', () => {
     const expectedProducts = [...products].sort((product1, product2) => product2.price - product1.price);
     expect(sortProductsByPrice(products, 'desc')).toEqual(expectedProducts);
   });
-  test.todo("товары [3, 1, 4] c 'desc' сортируются как [1, 4, 3]");
+  test("товары [3, 1, 4] c 'desc' сортируются как [1, 4, 3]", () => {
+    const preparedProducts = [...products].filter(product => product.id === 3 || product.id === 4 || product.id === 1);
+    const expectedProducts = preparedProducts.sort((product1, product2) => product2.price - product1.price);
+    expect(sortProductsByPrice(preparedProducts, 'desc')).toEqual(expectedProducts);
+  });
   test.todo("товары [5, 2, 6] c 'desc' сортируются как [2, 5, 6]");
   test.todo("'asc' не меняет исходный массив [1, 3, 4]");
   test.todo("'desc' не меняет исходный массив [1, 3, 4]");
