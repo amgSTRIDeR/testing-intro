@@ -23,6 +23,8 @@ describe('getProductById', () => {
   test("строковый ID '1' возвращает null", () => {
     expect(getProductById(products, '1')).toBeNull();
   });
-  test.todo('ID undefined возвращает null');
+  test('ID undefined возвращает null', () => {
+    expect(getProductById(products, undefined)).toBeNull();
+  });
   test.todo('ID NaN возвращает null');
 });
