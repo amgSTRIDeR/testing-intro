@@ -24,7 +24,11 @@ describe('sortProductsByPrice', () => {
     const expectedProducts = preparedProducts.sort((product1, product2) => product2.price - product1.price);
     expect(sortProductsByPrice(preparedProducts, 'desc')).toEqual(expectedProducts);
   });
-  test.todo("товары [5, 2, 6] c 'desc' сортируются как [2, 5, 6]");
+  test("товары [5, 2, 6] c 'desc' сортируются как [2, 5, 6]", () => {
+    const preparedProducts = [...products].filter(product => product.id === 2 || product.id === 5 || product.id === 6);
+    const expectedProducts = preparedProducts.sort((product1, product2) => product2.price - product1.price);
+    expect(sortProductsByPrice(preparedProducts, 'desc')).toEqual(expectedProducts);
+  });
   test.todo("'asc' не меняет исходный массив [1, 3, 4]");
   test.todo("'desc' не меняет исходный массив [1, 3, 4]");
   test.todo('направление по умолчанию не меняет исходный массив всех товаров');
