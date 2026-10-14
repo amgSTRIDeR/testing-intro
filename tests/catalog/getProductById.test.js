@@ -20,7 +20,9 @@ describe('getProductById', () => {
   test('ID -1 возвращает null', () => {
     expect(getProductById(products, -1)).toBeNull();
   });
-  test.todo("строковый ID '1' возвращает null");
+  test("строковый ID '1' возвращает null", () => {
+    expect(getProductById(products, '1')).toBeNull();
+  });
   test.todo('ID undefined возвращает null');
   test.todo('ID NaN возвращает null');
 });
