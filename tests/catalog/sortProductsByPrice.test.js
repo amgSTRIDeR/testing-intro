@@ -31,8 +31,9 @@ describe('sortProductsByPrice', () => {
   });
   test("'asc' не меняет исходный массив [1, 3, 4]", () => {
     const preparedProducts = [...products].filter(product => product.id === 1 || product.id === 3 || product.id === 4);
-    const expectedProducts = preparedProducts.sort((product1, product2) => product1.price - product2.price);
-    expect(sortProductsByPrice(preparedProducts, 'asc')).toEqual(expectedProducts);
+    const copiedPreparedProducts = [...preparedProducts];
+    sortProductsByPrice(preparedProducts, 'asc');
+    expect(preparedProducts).toEqual(copiedPreparedProducts);
   });
   test.todo("'desc' не меняет исходный массив [1, 3, 4]");
   test.todo('направление по умолчанию не меняет исходный массив всех товаров');
