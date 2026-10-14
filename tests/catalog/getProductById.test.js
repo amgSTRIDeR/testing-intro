@@ -14,7 +14,9 @@ describe('getProductById', () => {
   test('ID 0 возвращает null', () => {
     expect(getProductById(products, 0)).toBeNull();
   });
-  test.todo('ID 999 возвращает null');
+  test('ID 999 возвращает null', () => {
+    expect(getProductById(products, 999)).toBeNull();
+  });
   test.todo('ID -1 возвращает null');
   test.todo("строковый ID '1' возвращает null");
   test.todo('ID undefined возвращает null');
