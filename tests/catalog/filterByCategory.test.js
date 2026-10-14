@@ -5,7 +5,9 @@ describe('filterByCategory', () => {
   test("'all' возвращает товары с ID [1, 2, 3, 4, 5, 6]", () => {
      expect(filterByCategory(products, 'all')).toEqual(products);
   });
-  test.todo("undefined возвращает товары с ID [1, 2, 3, 4, 5, 6]");
+  test("undefined возвращает товары с ID [1, 2, 3, 4, 5, 6]", () => {
+    expect(filterByCategory(products)).toEqual(products);
+  });
   test.todo("пустая строка возвращает товары с ID [1, 2, 3, 4, 5, 6]");
   test.todo("'electronics' возвращает товары с ID [1, 2]");
   test.todo("'books' возвращает товары с ID [3, 6]");
