@@ -10,7 +10,10 @@ describe('searchProducts', () => {
     const expectedProduct = [[...products].find(product => product.id === 6)];
     expect(searchProducts(products, 'Чистый код')).toEqual(expectedProduct);
   });
-  test.todo("'Настольная лампа' возвращает товар с ID 4");
+  test("'Настольная лампа' возвращает товар с ID 4", () => {
+    const expectedProduct = [[...products].find(product => product.id === 4)];
+    expect(searchProducts(products, 'Настольная лампа')).toEqual(expectedProduct);
+  });
   test.todo("'javascript' возвращает товар с ID 3");
   test.todo("'ЧЕХОЛ' возвращает товар с ID 5");
   test.todo("'наушники' возвращает товар с ID 1");
