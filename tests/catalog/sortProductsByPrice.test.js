@@ -10,7 +10,11 @@ describe('sortProductsByPrice', () => {
     const expectedProducts = [...products].sort((product1, product2) => product1.price - product2.price);
     expect(sortProductsByPrice(products)).toEqual(expectedProducts);
   });
-  test.todo("товары [1, 3, 4] c 'asc' сортируются как [3, 4, 1]");
+  test("товары [1, 3, 4] c 'asc' сортируются как [3, 4, 1]", () => {
+    const preparedProducts = [...products].filter(product => product.id === 3 || product.id === 4 || product.id === 1);
+    const expectedProducts = preparedProducts.sort((product1, product2) => product1.price - product2.price);
+    expect(sortProductsByPrice(preparedProducts)).toEqual(expectedProducts);
+  });
   test.todo("все товары c 'desc' сортируются как [1, 2, 4, 5, 6, 3]");
   test.todo("товары [3, 1, 4] c 'desc' сортируются как [1, 4, 3]");
   test.todo("товары [5, 2, 6] c 'desc' сортируются как [2, 5, 6]");
