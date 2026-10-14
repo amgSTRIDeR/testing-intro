@@ -29,5 +29,7 @@ describe('filterByCategory', () => {
   test("'toys' возвращает пустой массив", () => {
     expect(filterByCategory(products, 'toys')).toEqual([]);
   });
-  test.todo("'sports' возвращает пустой массив");
+  test("'sports' возвращает пустой массив", () => {
+    expect(filterByCategory(products, 'sports')).toEqual([]);
+  });
 });
