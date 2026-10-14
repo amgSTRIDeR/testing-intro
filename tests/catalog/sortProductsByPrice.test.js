@@ -41,5 +41,9 @@ describe('sortProductsByPrice', () => {
     sortProductsByPrice(preparedProducts, 'desc');
     expect(preparedProducts).toEqual(copiedPreparedProducts);
   });
-  test.todo('направление по умолчанию не меняет исходный массив всех товаров');
+  test('направление по умолчанию не меняет исходный массив всех товаров', () => {
+    const copiedProducts = [...products];
+    sortProductsByPrice(products);
+    expect(copiedProducts).toEqual(products);
+  });
 });
