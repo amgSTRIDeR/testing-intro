@@ -26,7 +26,9 @@ describe('searchProducts', () => {
     const expectedProduct = [[...products].find(product => product.id === 1)];
     expect(searchProducts(products, 'наушники')).toEqual(expectedProduct);
   });
-  test.todo("пустая строка возвращает товары с ID [1, 2, 3, 4, 5, 6]");
+  test("пустая строка возвращает товары с ID [1, 2, 3, 4, 5, 6]", () => {
+    expect(searchProducts(products, ' ')).toEqual(products);
+  });
   test.todo("строка из пробелов возвращает товары с ID [1, 2, 3, 4, 5, 6]");
   test.todo("'\\t\\n' возвращает товары с ID [1, 2, 3, 4, 5, 6]");
 });
