@@ -11,7 +11,10 @@ describe('filterByCategory', () => {
   test("пустая строка возвращает товары с ID [1, 2, 3, 4, 5, 6]", () => {
     expect(filterByCategory(products)).toEqual(products);
   });
-  test.todo("'electronics' возвращает товары с ID [1, 2]");
+  test("'electronics' возвращает товары с ID [1, 2]", () => {
+    const expectedProducts = [...products].filter((product) => product.id === 1 || product.id === 2);
+    expect(filterByCategory(products, 'electronics')).toEqual(expectedProducts);
+  });
   test.todo("'books' возвращает товары с ID [3, 6]");
   test.todo("'home' возвращает товары с ID [4, 5]");
   test.todo("'clothes' возвращает пустой массив");
