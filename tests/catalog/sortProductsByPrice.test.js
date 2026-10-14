@@ -13,9 +13,12 @@ describe('sortProductsByPrice', () => {
   test("товары [1, 3, 4] c 'asc' сортируются как [3, 4, 1]", () => {
     const preparedProducts = [...products].filter(product => product.id === 3 || product.id === 4 || product.id === 1);
     const expectedProducts = preparedProducts.sort((product1, product2) => product1.price - product2.price);
-    expect(sortProductsByPrice(preparedProducts)).toEqual(expectedProducts);
+    expect(sortProductsByPrice(preparedProducts, 'asc')).toEqual(expectedProducts);
   });
-  test.todo("все товары c 'desc' сортируются как [1, 2, 4, 5, 6, 3]");
+  test("все товары c 'desc' сортируются как [1, 2, 4, 5, 6, 3]", () => {
+    const expectedProducts = [...products].sort((product1, product2) => product2.price - product1.price);
+    expect(sortProductsByPrice(products, 'desc')).toEqual(expectedProducts);
+  });
   test.todo("товары [3, 1, 4] c 'desc' сортируются как [1, 4, 3]");
   test.todo("товары [5, 2, 6] c 'desc' сортируются как [2, 5, 6]");
   test.todo("'asc' не меняет исходный массив [1, 3, 4]");
