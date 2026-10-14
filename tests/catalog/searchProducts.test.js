@@ -27,8 +27,10 @@ describe('searchProducts', () => {
     expect(searchProducts(products, 'наушники')).toEqual(expectedProduct);
   });
   test("пустая строка возвращает товары с ID [1, 2, 3, 4, 5, 6]", () => {
-    expect(searchProducts(products, ' ')).toEqual(products);
+    expect(searchProducts(products, '')).toEqual(products);
   });
-  test.todo("строка из пробелов возвращает товары с ID [1, 2, 3, 4, 5, 6]");
+  test("строка из пробелов возвращает товары с ID [1, 2, 3, 4, 5, 6]", () => {
+    expect(searchProducts(products, '  ')).toEqual(products);
+  });
   test.todo("'\\t\\n' возвращает товары с ID [1, 2, 3, 4, 5, 6]");
 });
