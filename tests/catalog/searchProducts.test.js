@@ -32,5 +32,7 @@ describe('searchProducts', () => {
   test("строка из пробелов возвращает товары с ID [1, 2, 3, 4, 5, 6]", () => {
     expect(searchProducts(products, '  ')).toEqual(products);
   });
-  test.todo("'\\t\\n' возвращает товары с ID [1, 2, 3, 4, 5, 6]");
+  test("'\\t\\n' возвращает товары с ID [1, 2, 3, 4, 5, 6]", () => {
+    expect(searchProducts(products, '\t\n')).toEqual(products);
+  });
 });
