@@ -18,7 +18,10 @@ describe('searchProducts', () => {
     const expectedProduct = [[...products].find(product => product.id === 3)];
     expect(searchProducts(products, 'javascript')).toEqual(expectedProduct);
   });
-  test.todo("'ЧЕХОЛ' возвращает товар с ID 5");
+  test("'ЧЕХОЛ' возвращает товар с ID 5", () => {
+    const expectedProduct = [[...products].find(product => product.id === 5)];
+    expect(searchProducts(products, 'ЧЕХОЛ')).toEqual(expectedProduct);
+  });
   test.todo("'наушники' возвращает товар с ID 1");
   test.todo("пустая строка возвращает товары с ID [1, 2, 3, 4, 5, 6]");
   test.todo("строка из пробелов возвращает товары с ID [1, 2, 3, 4, 5, 6]");
