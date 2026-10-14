@@ -35,6 +35,11 @@ describe('sortProductsByPrice', () => {
     sortProductsByPrice(preparedProducts, 'asc');
     expect(preparedProducts).toEqual(copiedPreparedProducts);
   });
-  test.todo("'desc' не меняет исходный массив [1, 3, 4]");
+  test("'desc' не меняет исходный массив [1, 3, 4]", () => {
+    const preparedProducts = [...products].filter(product => product.id === 1 || product.id === 3 || product.id === 4);
+    const copiedPreparedProducts = [...preparedProducts];
+    sortProductsByPrice(preparedProducts, 'desc');
+    expect(preparedProducts).toEqual(copiedPreparedProducts);
+  });
   test.todo('направление по умолчанию не меняет исходный массив всех товаров');
 });
