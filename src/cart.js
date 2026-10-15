@@ -53,7 +53,7 @@ function calculateCartSubtotal(cart) {
 function calculateOrderTotal(cart, promo) {
   const subtotal = calculateCartSubtotal(cart);
   const discount = subtotal >= 20000 && promo === 'SAVE10' ? subtotal * 0.1 : 0;
-  const delivery = subtotal >= 50000 ? 0 : 30000;
+  const delivery = subtotal >= 50000 || subtotal === 0 ? 0 : 30000;
   const total = subtotal - discount + delivery;
 
   return {
