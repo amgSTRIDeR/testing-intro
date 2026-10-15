@@ -40,7 +40,15 @@ function changeQuantity(cart, id, quantity) {
   cart[productIndex].quantity = quantity;
   return cart;
 }
-function removeFromCart() { return notImplemented(); }
+function removeFromCart(cart, id) {
+  const productIndex = cart.findIndex((product) => product.id === id);
+  if (productIndex === -1) {
+    return cart;
+  }
+
+  cart.splice(productIndex, 1);
+  return cart;
+}
 function calculateCartSubtotal() { return notImplemented(); }
 function calculateOrderTotal() { return notImplemented(); }
 
